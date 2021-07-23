@@ -5,6 +5,7 @@ By tutorial from Traversy Media
 - https://www.youtube.com/watch?v=qZXt1Aom3Cs
 
 Packages: 
+
 - vue
 - vue-router
 - json-server
