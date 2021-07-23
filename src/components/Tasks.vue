@@ -22,3 +22,9 @@ export default {
   emits: [`delete-task`, `toggle-reminder`],
 };
 </script>
+
+<style scoped>
+div {
+  transition: 0.5s;
+}
+</style>

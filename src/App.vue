@@ -27,12 +27,6 @@ export default {
     toggleAddTask() {
       this.showAddTask = !this.showAddTask;
     },
-
-    /* async fetchTask(id) {
-      const res = await fetch(`api/tasks/${id}`);
-      const data = await res.json();
-      return data;
-    }, */
   },
   data() {
     return {
@@ -67,7 +61,7 @@ body {
   color: #fff;
   border: none;
   padding: 10px 20px;
-  margin: 5px;
+  margin: 5px 0;
   border-radius: 5px;
   cursor: pointer;
   text-decoration: none;

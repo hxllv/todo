@@ -70,8 +70,8 @@ export default {
 }
 .form-control input {
   width: 100%;
-  height: 40px;
-  margin: 5px;
+  max-height: 40px;
+  margin: 5px 0;
   padding: 3px 7px;
   font-size: 17px;
 }
@@ -85,6 +85,6 @@ export default {
 }
 .form-control-check input {
   flex: 2;
-  height: 20px;
+  max-height: 20px;
 }
 </style>

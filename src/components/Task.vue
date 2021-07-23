@@ -8,6 +8,9 @@
       <i @click="onDelete(task.id)" class="fas fa-times"></i>
     </h3>
     <p>{{ task.day }}</p>
+    <router-link :to="{ name: `Edit`, query: { id: task.id } }" :task="task"
+      >Edit</router-link
+    >
   </div>
 </template>
 

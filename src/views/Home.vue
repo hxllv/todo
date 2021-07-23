@@ -1,5 +1,13 @@
 <template>
-  <AddTask v-if="showAddTask" @add-task="addTask" />
+  <!-- v-if/v-show + transition is terrible imo -->
+
+  <!--   <transition name="add-task">
+    <AddTask v-show="showAddTask" @add-task="addTask" />
+  </transition> -->
+
+  <div :class="(showAddTask ? `show` : `hide`) + ` add-task-div`">
+    <AddTask @add-task="addTask" />
+  </div>
 
   <Tasks
     @delete-task="deleteTask"
@@ -86,3 +94,34 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+div {
+  overflow: hidden;
+  transition: max-height 0.6s ease-in-out, transform 0.4s;
+}
+
+.show {
+  max-height: 100vh;
+  transform: scale(1);
+  visibility: visible;
+}
+
+.hide {
+  max-height: 0vh;
+  transform: scale(0);
+  visibility: hidden;
+  transition: max-height 0.6s ease-in-out, transform 0.4s, visibility 0s 0.6s;
+}
+
+/* .add-task-enter-active,
+.add-task-leave-active {
+  transition: max-height 0.6s ease-in-out, transform 0.4s;
+  max-height: 100vh;
+  transform: scale(1);
+}
+.add-task-enter-from, .add-task-leave-to {
+  max-height: 0vh;
+  transform: scale(0);
+} */
+</style>

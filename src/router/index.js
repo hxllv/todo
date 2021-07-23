@@ -2,6 +2,7 @@ import { createWebHistory } from "vue-router";
 import { createRouter } from "vue-router";
 import About from "../views/About.vue";
 import Home from "../views/Home.vue";
+import Edit from "../views/Edit.vue";
 
 const routes = [
   {
@@ -13,6 +14,14 @@ const routes = [
     path: `/`,
     name: `Home`,
     component: Home,
+  },
+  {
+    path: `/edit`,
+    name: `Edit`,
+    component: Edit,
+    props(route) {
+      return { id: route.query.id };
+    },
   },
 ];
 
